@@ -2,6 +2,9 @@
 
 <h1>Job Statuses</h1>
 
+<button type="button" id="reload">reload</button>
+<button type="button" id="calljob">call job</button>
+
 <table>
   <thead>
     <tr>
@@ -25,3 +28,17 @@
 <br>
 
 <%= link_to 'New Job Status', new_job_status_path %>
+
+<script>
+  var reload =document.getElementById('reload');
+  reload.addEventListener('click',function(){
+    window.location.reload();
+  });
+
+  var reload =document.getElementById('calljob');
+  reload.addEventListener('click',function(){
+    fetch('/home/call_job', {
+      method: 'GET'
+    });
+  });
+</script>
