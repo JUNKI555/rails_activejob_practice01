@@ -6,4 +6,3 @@
   - https://railsguides.jp/active_job_basics.html
 - 【Active Job】Sidekiq vs Resque vs Delayed Job | shima_zu | zenn
   - https://zenn.dev/shima_zu/articles/rails_active_job
-
