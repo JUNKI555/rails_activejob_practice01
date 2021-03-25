@@ -4,3 +4,76 @@
 <p>
   <%= link_to 'to /job_statuses', job_statuses_path %>
 </p>
+
+<%# ここから下は Rails+Fetch API のテスト用 %>
+<hr>
+
+<p>
+  <%= link_to 'to /get_post', get_post_path %>
+</p>
+
+<input type="text" id="input_text" name="name_input_text" maxlength="8" size="10">
+<br>
+<button type="button" id="button_get">Fetch API : GET</button> | 
+<button type="button" id="button_post">Fetch API : POST</button>
+
+<script>
+  // -------------------------------------------
+  // button: Fetch API : GET
+  // -------------------------------------------
+  const button_get = document.getElementById('button_get');
+  button_get.addEventListener('click',function(){
+    fetch('/get_post', {
+      method: 'GET'
+    })
+    .then(function(response){
+      const response_message = response.status + ':' + response.statusText
+      console.log(response_message);
+      window.alert('response_message=' + response_message);
+    });
+  });
+
+  // -------------------------------------------
+  // button: Fetch API : POST
+  // -------------------------------------------
+  const button_post = document.getElementById('button_post');
+  button_post.addEventListener('click',function(){
+    const post_data = {
+      key1: "data1",
+      key2: "data2",
+      key3: 3
+    };
+
+    const input_text = document.getElementById('input_text');
+    post_data[input_text.name] = input_text.value;
+
+    fetch('/get_post', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': getCsrfToken()
+      },
+      body: JSON.stringify(post_data),
+    })
+    .then(function(response){
+      const response_message = response.status + ':' + response.statusText
+      console.log(response_message);
+      window.alert('response_message=' + response_message);
+    });
+  });
+
+  // -------------------------------------------
+  // app/views/layouts/application.html.erb に csrf_meta_tags で設定されている csrf-token' の取得
+  // -------------------------------------------
+  const getCsrfToken = () => {
+      const metas = document.getElementsByTagName('meta');
+      for (let meta of metas) {
+          if (meta.getAttribute('name') === 'csrf-token') {
+              console.log('csrf-token:', meta.getAttribute('content'));
+              return meta.getAttribute('content');
+          }
+      }
+      return '';
+  }
+</script>

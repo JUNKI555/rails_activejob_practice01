@@ -5,4 +5,10 @@ class HomeController < ApplicationController
   def call_job
     SampleJob.perform_later
   end
+
+  def get_post
+    # binding.pry
+    pp params
+    pp 'get_post'
+  end
 end
