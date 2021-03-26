@@ -10,7 +10,7 @@
 - 【Active Job】Sidekiq vs Resque vs Delayed Job | shima_zu | zenn
   - https://zenn.dev/shima_zu/articles/rails_active_job
 
-## Reference sources: API call by Fetch API
+## Reference sources: API call by Fetch API practice
 - Fetch の使用 | Web API | MDN
   - https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch
 - 3.7 HTTP動詞を制限する | Rails のルーティング | Railsガイド
@@ -19,6 +19,8 @@
   - https://developer.mozilla.org/ja/docs/Web/API/Response
 - 3.1 CSRFへの対応策 | Rails セキュリティガイド | Railsガイド
   - https://railsguides.jp/security.html#csrf%E3%81%B8%E3%81%AE%E5%AF%BE%E5%BF%9C%E7%AD%96
+- RailsのCSRF保護を詳しく調べてみた（翻訳）｜TechRacho（テックラッチョ）｜BPS株式会社
+  - https://techracho.bpsinc.jp/hachi8833/2017_10_23/46891
 - Fetch APIを使ってRailsのAPIを叩く | The Pragmatic Ball boy
   - https://yanamura.hatenablog.com/entry/2017/05/12/094103
 - Basic fetch requests with JS + Rails | DEV Community 👩‍💻👨‍💻
@@ -31,3 +33,7 @@
   - https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 - JavaScriptでJSONデータを作る方法 | 小粋空間
   - http://www.koikikukan.com/archives/2018/02/21-000300.php
+- ネストするStrong Parametersの書きかた | Qiita
+  - https://qiita.com/kymmt90/items/4ce8618ca8f537b2ef7e
+- RailsのStrongParametersと友だちになった | Qiita
+  - https://qiita.com/staka121/items/b564e980fb1ae51a462e
