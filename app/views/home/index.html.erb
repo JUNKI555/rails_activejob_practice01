@@ -12,7 +12,11 @@
   <%= link_to 'to /get_post', get_post_path %>
 </p>
 
-<input type="text" id="input_text" name="name_input_text" maxlength="8" size="10">
+input_text: <input type="text" id="input_text" name="name_input_text" maxlength="8" size="10">
+<br>
+keywords: <input type="text" group='keyword' maxlength="8" size="10">
+<input type="text" group='keyword' maxlength="8" size="10">
+<input type="text" group='keyword' maxlength="8" size="10">
 <br>
 <button type="button" id="button_get">Fetch API : GET</button> | 
 <button type="button" id="button_post">Fetch API : POST</button>
@@ -38,14 +42,25 @@
   // -------------------------------------------
   const button_post = document.getElementById('button_post');
   button_post.addEventListener('click',function(){
+    // 固定値
     const post_data = {
       key1: "data1",
       key2: "data2",
       key3: 3
     };
 
+    // id で取得
     const input_text = document.getElementById('input_text');
     post_data[input_text.name] = input_text.value;
+
+    // attribute で取得
+    const keyword_nodes = document.querySelectorAll("input[group='keyword']");
+    const keyword_data = [];
+    for (let keyword_node of keyword_nodes) {
+      const keyword = {keyword: keyword_node.value};
+      keyword_data.push(keyword);
+    }
+    post_data['keywords'] = keyword_data;
 
     fetch('/get_post', {
       method: 'POST',
