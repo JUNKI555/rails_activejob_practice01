@@ -11,6 +11,8 @@
   - https://zenn.dev/shima_zu/articles/rails_active_job
 
 ## Reference sources: API call by Fetch API practice
+- Ruby on Rails へ Fetch API で非同期通信を行う | 北山淳也 | zenn
+  - https://zenn.dev/junki555/articles/e119439e46a85e
 - Fetch の使用 | Web API | MDN
   - https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch
 - 3.7 HTTP動詞を制限する | Rails のルーティング | Railsガイド
