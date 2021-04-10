@@ -2,7 +2,6 @@
 - Active Job practice
 - API call by Fetch API practice
 
-
 ## Reference sources: Active Job practice
 - Rails Active Job をとりえず使ってみる (with docker-compose) | 北山淳也 | zenn
   - https://zenn.dev/junki555/articles/a390d32d6f3c51
