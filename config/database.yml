@@ -13,13 +13,13 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: mysql2://root:@db:3306
   # username: root
   # password:
   # host: localhost
 
 development:
   <<: *default
+  url: mysql2://root:@db:3306
   database: app_development
 
 # Warning: The database defined as "test" will be erased and
@@ -27,6 +27,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  url: mysql2://root:@db:3306
   database: app_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -54,7 +55,6 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 15
-  url: ""
   database: myapp_production
   username: myapp
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
