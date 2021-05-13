@@ -11,6 +11,7 @@ class SampleJob < ApplicationJob
       return
     end
 
+    # repeat 5 times
     for i in 0..4
       job_status.status += 1
       job_status.save!
