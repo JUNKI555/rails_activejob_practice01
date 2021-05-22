@@ -46,6 +46,7 @@ group :development do
 end
 
 group :production do
+  # for heroku
   gem 'pg'
 end
 
